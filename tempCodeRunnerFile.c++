@@ -1,16 +1,32 @@
 #include<iostream>
-using namespace std;
-int main(){
-    int n;
-    cout<<"Enter number of rows:";
-    cin>>n;
-    int num=1;
-    for(int i=0;i<=n;i++){
-        for(int j=0;j<=i;j++){
-            cout<<num<<" ";
-            num++;
-        } 
-        cout<<endl;
+using namespace std; 
+void remvoe(int arr[],int n){
+    for(int i=0;i<n;i++){
+        bool duplaicate=false;
+
+        for(int j=0;j<n;j++){
+            if(arr[i]==arr[j]){
+                duplaicate=true;
+                break;
+                
+            }
+        }
+        if(!duplaicate){
+            cout<<arr[i]<<" ";
+        }
     }
+}
+int main(){
+   int n;
+    cin >> n;
+
+    int arr[n];
+
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    remvoe(arr, n);
+
     return 0;
 }
